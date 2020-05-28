@@ -18,4 +18,5 @@ bot: Watching good movie refreshes our minds.
 
 ![24](images/24.png)  
 
-这一小节和上一小节讲的两个标签较之前的标签较为复杂，同学们可以多练多试多比较。如果还有什么疑问，可以及时联系笔者，邮箱为：catwts@pku.edu.cn 
+这一小节和上一小节讲的两个标签较之前的标签较为复杂，同学们可以多练多试多比较。如果还有什么疑问，可以及时联系笔者，邮箱为：catwts@pku.edu.cn   
+

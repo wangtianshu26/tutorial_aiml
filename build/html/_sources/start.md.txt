@@ -15,7 +15,8 @@ Pandorabots提供了三种账号，分别是Sandbox、Developer和Pro （Sandbox
 4. 创建完成后，选择 `Edit-Code Editor-File-New-AIML`，创建一个名为‘hello’的aiml文件。创建完成后，在AIML文件夹下面你可以看到两个aiml文件，分别是udc.aiml和hello.aiml。如下图所示：
 ![3](images/3.png)
 
-5. 到这里为止，准备工作就完成了，在下一小节中，我们会开始介绍AIML语言的具体应用，同时也会讲解一些Pandorabots平台的一些功能。让我们继续学习吧！  
+5. 到这里为止，准备工作就完成了，在下一小节中，我们会开始介绍AIML语言的具体应用，同时也会讲解一些Pandorabots平台的一些功能。让我们继续学习吧！    
+
 
 
 

@@ -19,4 +19,8 @@ Bot：Carrots are good for people's health. You should definitely try them.
 
 ![15](images/15.png)  
 
-这一节中我们介绍了 `<srai>` 标签的作用，在下一节中我们将继续探索其他标签，使我们的聊天机器人更加丰富！一起学习吧！
+这一节中我们介绍了 `<srai>` 标签的作用，在下一节中我们将继续探索其他标签，使我们的聊天机器人更加丰富！一起学习吧！  
+
+
+
+
