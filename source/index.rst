@@ -26,6 +26,7 @@ AIML（人工智能标记语言）教程
    lists.md
    buttons_replies.md
    user_manual.md
+   AIML_based_template.md
 
 
 
