@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. AIML基本标签 &mdash; AIML教程 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="4. AIML通配符" href="wildcards.html" />
+    <link rel="prev" title="2. AIML入门" href="start.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AIML教程
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. AIML简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">2. AIML入门</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. AIML基本标签</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">3.1. &lt;aiml&gt; 标签</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#category">3.2. &lt;category&gt; 标签</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pattern">3.3. &lt;pattern&gt; 标签</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#template">3.4. &lt;template&gt; 标签</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.5. 示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.6. 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wildcards.html">4. AIML通配符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="star.html">5. &lt;star&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srai.html">6. &lt;srai&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random.html">7. &lt;random&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_get.html">8. &lt;set&gt;和&lt;get&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="that.html">9. &lt;that&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic.html">10. &lt;topic&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="think.html">11. &lt;think&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">12. &lt;condition&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">13. 列表标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons_replies.html">14. &lt;button&gt;标签和&lt;reply&gt;标签</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AIML教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>AIML基本标签</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/basictags.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiml">
+<h1><span class="section-number">3. </span>AIML基本标签<a class="headerlink" href="#aiml" title="永久链接至标题">¶</a></h1>
+<p>在这一小节中，我们会介绍四个AIML的基本标签，它们分别是<code class="docutils literal notranslate"><span class="pre">&lt;aiml&gt;、&lt;category&gt;、&lt;pattern&gt;、&lt;template&gt;</span></code>。</p>
+<div class="section" id="id1">
+<h2><span class="section-number">3.1. </span>&lt;aiml&gt; 标签<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;aiml&gt;</span></code> 标签位于AIML文档的开始和结束。它的属性包含版本和编码信息。作为强制性要求，<code class="docutils literal notranslate"><span class="pre">&lt;aiml&gt;</span></code> 标记必须至少包含一个 <code class="docutils literal notranslate"><span class="pre">&lt;category&gt;</span></code> 标记。我们可以创建多个AIML文件，其中每个AIML文件都包含一个 <code class="docutils literal notranslate"><span class="pre">&lt;aiml&gt;</span></code> 标签。</p>
+<p>在Pandorabots里我们每次新建一个aiml文件，系统都会自动为我们生成 <code class="docutils literal notranslate"><span class="pre">&lt;aiml&gt;</span></code> 标签。</p>
+</div>
+<div class="section" id="category">
+<h2><span class="section-number">3.2. </span>&lt;category&gt; 标签<a class="headerlink" href="#category" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;category&gt;</span></code>标签是我们创建的机器人的基本知识单元，里面包括<strong>用户的输入内容</strong>和<strong>bot的响应内容</strong>。标签内必须包含两个标签：<code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;和&lt;template&gt;</span></code>。</p>
+</div>
+<div class="section" id="pattern">
+<h2><span class="section-number">3.3. </span>&lt;pattern&gt; 标签<a class="headerlink" href="#pattern" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;</span></code> 表示<strong>用户的输入</strong>。它是<code class="docutils literal notranslate"><span class="pre">&lt;category&gt;</span></code>标记中的第一个标记。<code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;</span></code>标记可以包含通配符以匹配多个句子,即多种用户输入。<br />AIML不区分大小写。如果用户输入Hello Alice，hello alice，HELLO ALICE等，则所有输入均有效，为了使大小写的输入均能匹配到，我们一般会把 <code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;</span></code> 标签里的内容全部大写，如：<br /><code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;HELLO</span> <span class="pre">BOT&lt;/pattern&gt;</span></code>。<br /><strong>注意</strong>：<code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;</span></code>标签内不能出现标点符号。</p>
+</div>
+<div class="section" id="template">
+<h2><span class="section-number">3.4. </span>&lt;template&gt; 标签<a class="headerlink" href="#template" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;template&gt;</span></code> 标签表示<strong>bot对用户的响应</strong>。它是<category>标记内的第二个标记。 在这个标签内还可以增加其他标签来实现更为复杂的对话逻辑。其他标签我们会在后面的小节中涉及到。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">3.5. </span>示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在我们刚才创建好的hello.aiml里加入如下代码：
+<img alt="4" src="_images/4.png" /><br />点击界面右下角橘色背景按钮进行测试，输入<code class="docutils literal notranslate"><span class="pre">hi</span> <span class="pre">bot</span></code> ,得到bot的响应 <code class="docutils literal notranslate"><span class="pre">Hi,</span> <span class="pre">User!</span></code><br /><img alt="5" src="_images/hibot.png" /></p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">3.6. </span>小结<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>在这一节中，我们介绍了AIML语言中四个最基本的标签，并用这些标签搭建了一个聊天机器人中的“Hello World”。在后面的小节中，我们将会继续介绍AIML的标签，并用这些标签来实现更加复杂的聊天机器人。大家开始转战下一章吧！</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="wildcards.html" class="btn btn-neutral float-right" title="4. AIML通配符" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="start.html" class="btn btn-neutral float-left" title="2. AIML入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, wts
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<style>
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+     background: green;
+}
+/* Sidebar */
+.wy-nav-side {
+     background: darkorange;
+}
+</style>
+
+
+</body>
+</html>

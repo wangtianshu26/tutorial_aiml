@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. AIML入门 &mdash; AIML教程 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="3. AIML基本标签" href="basictags.html" />
+    <link rel="prev" title="1. AIML简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AIML教程
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. AIML简介</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. AIML入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basictags.html">3. AIML基本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wildcards.html">4. AIML通配符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="star.html">5. &lt;star&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srai.html">6. &lt;srai&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random.html">7. &lt;random&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_get.html">8. &lt;set&gt;和&lt;get&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="that.html">9. &lt;that&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic.html">10. &lt;topic&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="think.html">11. &lt;think&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">12. &lt;condition&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">13. 列表标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons_replies.html">14. &lt;button&gt;标签和&lt;reply&gt;标签</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AIML教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>AIML入门</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/start.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiml">
+<h1><span class="section-number">2. </span>AIML入门<a class="headerlink" href="#aiml" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>上一节我们提到了使用Pandorabots平台来搭建聊天机器人，那么在这一节，我们将介绍如何使用Pandorabots来创建属于你的聊天机器人。</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>打开<a class="reference external" href="https://home.pandorabots.com/home.html">Pandorabots官网</a>，点击 <code class="docutils literal notranslate"><span class="pre">Sign</span> <span class="pre">Up</span> <span class="pre">Free</span></code>，注册一个账号。在国内的同学可以选择使用github账号登陆。创建成功后，您将看到以下界面：<br /><img alt="sign" src="_images/sign.png" /><br />Pandorabots提供了三种账号，分别是Sandbox、Developer和Pro （Sandbox足够我们学习并应用AIML语言，如果您有部署的需求的话，也可以选择其他两种付费的账号）。</p></li>
+<li><p>选择Sandbox，您会看到下面这个界面：
+<img alt="1" src="_images/1.png" /></p></li>
+<li><p>点击左侧 <code class="docutils literal notranslate"><span class="pre">MY</span> <span class="pre">BOTS</span></code> 后面的加号，添加一个bot。配置如下：
+<img alt="2" src="_images/2.png" /></p></li>
+<li><p>创建完成后，选择 <code class="docutils literal notranslate"><span class="pre">Edit-Code</span> <span class="pre">Editor-File-New-AIML</span></code>，创建一个名为‘hello’的aiml文件。创建完成后，在AIML文件夹下面你可以看到两个aiml文件，分别是udc.aiml和hello.aiml。如下图所示：
+<img alt="3" src="_images/3.png" /></p></li>
+<li><p>到这里为止，准备工作就完成了，在下一小节中，我们会开始介绍AIML语言的具体应用，同时也会讲解一些Pandorabots平台的一些功能。让我们继续学习吧！</p></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basictags.html" class="btn btn-neutral float-right" title="3. AIML基本标签" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="1. AIML简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, wts
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<style>
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+     background: green;
+}
+/* Sidebar */
+.wy-nav-side {
+     background: darkorange;
+}
+</style>
+
+
+</body>
+</html>

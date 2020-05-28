@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10. &lt;topic&gt;标签 &mdash; AIML教程 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="11. &lt;think&gt;标签" href="think.html" />
+    <link rel="prev" title="9. &lt;that&gt;标签" href="that.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AIML教程
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. AIML简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">2. AIML入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basictags.html">3. AIML基本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wildcards.html">4. AIML通配符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="star.html">5. &lt;star&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srai.html">6. &lt;srai&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random.html">7. &lt;random&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_get.html">8. &lt;set&gt;和&lt;get&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="that.html">9. &lt;that&gt;标签</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. &lt;topic&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="think.html">11. &lt;think&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">12. &lt;condition&gt;标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons_replies.html">13. &lt;reply&gt;标签和&lt;button&gt;标签</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AIML教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">10. </span>&lt;topic&gt;标签</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/topic.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="topic">
+<h1><span class="section-number">10. </span>&lt;topic&gt;标签<a class="headerlink" href="#topic" title="永久链接至标题">¶</a></h1>
+<p>上一节我们了解了 <code class="docutils literal notranslate"><span class="pre">&lt;that&gt;</span></code> 标签能够将上下文联系起来，但是它的作用很有限，如果遇到上一个对话中的 <code class="docutils literal notranslate"><span class="pre">&lt;template&gt;</span></code> 中的内容一模一样这种情况，这个标签就不起作用了。这时我们就需要 <code class="docutils literal notranslate"><span class="pre">&lt;topic&gt;</span></code> 标签。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;topic&gt;</span></code> 标签在AIML中用于存储上下文，以便以后可以基于该上下文进行对话。通常，在 “是/否” 类型对话中使用该标签。它可以帮助AIML搜索在主题上下文内编写的category。</p>
+<p>比如，我们要实现以下对话：
+User: Shall we discuss movies?<br />bot: Yes movies.<br />User: Comedy movies are nice to watch.<br />bot: Watching good movie refreshes our minds.</p>
+<p>这个对话看似简单，但是如果有另一个对话，bot也回复的是“Yes movies.”, 那要怎么做呢？请看下面的代码：</p>
+<p><img alt="23" src="_images/23.png" /></p>
+<p>从上面的代码中可以看出，<code class="docutils literal notranslate"><span class="pre">&lt;topic&gt;</span></code> 标签把两个对话联系了起来。在<code class="docutils literal notranslate"><span class="pre">&lt;topic&gt;</span></code> 标签外面的同样的 <code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;</span></code> 内容就不会被匹配到。下面看一下测试结果：</p>
+<p><img alt="24" src="_images/24.png" /></p>
+<p>这一小节和上一小节讲的两个标签较之前的标签较为复杂，同学们可以多练多试多比较。如果还有什么疑问，可以及时联系笔者，邮箱为：catwts&#64;pku.edu.cn</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="think.html" class="btn btn-neutral float-right" title="11. &lt;think&gt;标签" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="that.html" class="btn btn-neutral float-left" title="9. &lt;that&gt;标签" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, wts
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<style>
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+     background: green;
+}
+/* Sidebar */
+.wy-nav-side {
+     background: darkorange;
+}
+</style>
+
+
+</body>
+</html>
