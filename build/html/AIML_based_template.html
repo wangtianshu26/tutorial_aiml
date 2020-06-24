@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="prev" title="15. AIML与用户手册（技术文档）" href="user_manual.html" /> 
+    <link rel="prev" title="15. AIML与技术文档（用户手册）" href="user_manual.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,10 +100,9 @@
 <li class="toctree-l1"><a class="reference internal" href="condition.html">12. &lt;condition&gt;标签</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lists.html">13. 列表标签</a></li>
 <li class="toctree-l1"><a class="reference internal" href="buttons_replies.html">14. &lt;button&gt;标签和&lt;reply&gt;标签</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_manual.html">15. AIML与用户手册（技术文档）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">15. AIML与技术文档（用户手册）</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">16. 基于AIML的技术文档开发模板</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#hp-photosmart-420-series">16.1. HP Photosmart 420 Series 手册结构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">16.2. 聊天机器人开发模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">16.1. 聊天机器人开发模板</a></li>
 </ul>
 </li>
 </ul>
@@ -172,14 +171,275 @@
             
   <div class="section" id="aiml">
 <h1><span class="section-number">16. </span>基于AIML的技术文档开发模板<a class="headerlink" href="#aiml" title="永久链接至标题">¶</a></h1>
-<p>在这一节笔者将分享如何把基于dita开发的技术文档转化为基于AIML的聊天机器人。使用的案例是HP Photosmart 420 Series用户手册。</p>
-<div class="section" id="hp-photosmart-420-series">
-<h2><span class="section-number">16.1. </span>HP Photosmart 420 Series 手册结构<a class="headerlink" href="#hp-photosmart-420-series" title="永久链接至标题">¶</a></h2>
-<p>（待完成）</p>
-</div>
+<p>在这一节笔者将分享如何把基于dita开发的技术文档转化为基于AIML的聊天机器人。使用的案例是 <a class="reference external" href="http://h10032.www1.hp.com/ctg/Manual/c00446517.pdf">HP Photosmart 420 Series</a> 用户手册。</p>
 <div class="section" id="id1">
-<h2><span class="section-number">16.2. </span>聊天机器人开发模板<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>（待完成）</p>
+<h2><span class="section-number">16.1. </span>聊天机器人开发模板<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>上一节我们提到了在DITA中有四种基本主题类型：</p>
+<ul class="simple">
+<li><p>任务主题（task topic）</p></li>
+<li><p>概念主题（concept topic）</p></li>
+<li><p>参引主题（reference topic）</p></li>
+<li><p>故障解决为主题（troubleshooting topic）</p></li>
+</ul>
+<p>这也就意味着，我们的机器人要向用户提供以上四种类型的信息，因此，在一开始，机器人要询问用户，是要对哪一内容进行询问。这就用到了AIML中的 <code class="docutils literal notranslate"><span class="pre">button</span></code> 标签，button提供给用户四种类型的选择，用户点击其中一种，比如“Met A Problem”,那么系统就会转入“Met A Problem”的 <code class="docutils literal notranslate"><span class="pre">topic</span></code> 标签中，之后用户不管是点击机器人提供的选项还是自己输入，都会在那个topic里面进行。</p>
+<p>用户在点击“Met A Problem”之后，机器人会为用户提供两种输入选择，第一种是用户主动输入，第二种是通过点击机器人提供的选项输入。两种输入方式的回答都指向一个位置，前者使用的是 <code class="docutils literal notranslate"><span class="pre">srai</span></code> 标签，后者使用的是 <code class="docutils literal notranslate"><span class="pre">postback</span></code> 标签。</p>
+<p>这其中还涉及到许多其他标签，比如 <code class="docutils literal notranslate"><span class="pre">&lt;delay&gt;</span></code> 可以设置返回信息的速度，<code class="docutils literal notranslate"><span class="pre">&lt;formal&gt;</span></code> 可以调整输出文字的格式等等。下面的动图展示了最终的效果：</p>
+<p><img alt="1" src="images/1.gif" /></p>
+<p>这一效果的模板如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	&lt;category&gt;
+	    &lt;pattern&gt;HI&lt;/pattern&gt;
+	    &lt;template&gt;
+	        Hi, I&#39;m HP Desktop Printer Assistant. How can I help you?&lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+	        Have you met a problem, do you want to know more about your printer or want to finish a task?
+	        &lt;button&gt;
+	            &lt;text&gt;
+	                &lt;formal&gt;met a problem&lt;/formal&gt;
+	            &lt;/text&gt;
+	            &lt;postback&gt;
+	                METAPROBLEM
+	            &lt;/postback&gt;
+	        &lt;/button&gt;
+	        &lt;button&gt;
+	            &lt;text&gt;
+	                &lt;formal&gt;know more&lt;/formal&gt;
+	            &lt;/text&gt;
+	            &lt;postback&gt;
+	                KNOWMORE
+	            &lt;/postback&gt;
+	        &lt;/button&gt;
+	        &lt;button&gt;
+	            &lt;text&gt;
+	                &lt;formal&gt;finish a task&lt;/formal&gt;
+	            &lt;/text&gt;
+	            &lt;postback&gt;
+	                FINISHATASK
+	            &lt;/postback&gt;
+	        &lt;/button&gt;
+	    &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;METAPROBLEM&lt;/pattern&gt;
+        &lt;template&gt;
+            I&#39;m sorry that you met a problem.&lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+            Can you tell me the model number of your printer👂?
+            &lt;think&gt;&lt;set name=&quot;topic&quot;&gt;problem&lt;/set&gt;&lt;/think&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;FINISHATASK&lt;/pattern&gt;
+        &lt;template&gt;
+            Can you tell me the model number of your printer👂?
+            &lt;think&gt;&lt;set name=&quot;topic&quot;&gt;task&lt;/set&gt;&lt;/think&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;KNOWMORE&lt;/pattern&gt;
+        &lt;template&gt;
+            Glad to hear that you want to know more!&lt;split/&gt;&lt;delay&gt;1&lt;/delay&gt;
+            May I know the model number of your printer?
+            &lt;think&gt;&lt;set name=&quot;topic&quot;&gt;knowmore&lt;/set&gt;&lt;/think&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+
+&lt;topic name=&quot;problem&quot;&gt;
+    &lt;category&gt;
+        &lt;pattern&gt;*&lt;/pattern&gt;
+        &lt;template&gt;
+            Got it! Your printer&#39;s number is &lt;star/&gt;. Don&#39;t worry, I&#39;ll help you out😁.&lt;split/&gt;&lt;delay&gt;1&lt;/delay&gt;
+            Can you tell me what happened, sweetie?&lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+            Here are some common problems.&lt;break/&gt;
+            
+            &lt;button&gt;
+                &lt;text&gt;Why are the letters too small when printing documents or web pages?&lt;/text&gt;
+                &lt;postback&gt;Q2&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;The Status light is flashing red&lt;/text&gt;
+                &lt;postback&gt;Q3&lt;/postback&gt;
+            &lt;/button&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+
+    &lt;category&gt;
+        &lt;pattern&gt;^ letters ^ too small ^&lt;/pattern&gt;
+        &lt;template&gt;&lt;srai&gt;Q2&lt;/srai&gt;&lt;/template&gt;
+    &lt;/category&gt;
+
+    &lt;category&gt;
+        &lt;pattern&gt;Q2&lt;/pattern&gt;
+        &lt;template&gt;
+            If printouts are too small or the letters are hard to read, change the font size settings in the application or web browser you are printing from to resolve the issue.&lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+            Do you need other help?
+            &lt;button&gt;
+                &lt;text&gt;I met another problem&lt;/text&gt;
+                &lt;postback&gt;&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;&lt;formal&gt;get back to the start&lt;/formal&gt;&lt;/text&gt;
+                &lt;postback&gt;HI&lt;/postback&gt;
+            &lt;/button&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;Q2.1&lt;/pattern&gt;
+        &lt;template&gt;
+            Use the font size menu to increase the font size in Microsoft word processing apps.
+            &lt;ol&gt;
+                &lt;li&gt;Open the document, then press the Ctrl + A keys to select all the text in the document&lt;/li&gt;
+                &lt;li&gt;Select a larger font size from the font settings menus.&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;Q3&lt;/pattern&gt;
+        &lt;template&gt;
+            The Status light is flashing red because an error is occured. &lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+            You can do the following things to get it right.&lt;split/&gt;&lt;delay&gt;1&lt;/delay&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Check the camera Image Display for instructions. If you have a digital camera connected to the printer or the bundled camera in the camera dock, check the camera screen for instructions. If the printer is connected to a computer, check the computer monitor for instructions.&lt;/li&gt;
+                &lt;li&gt;Turn off the printer.&lt;/li&gt;
+                &lt;li&gt;If the Status light continues to flash, go to    
+                
+                &lt;link&gt;
+                    &lt;text&gt;HP官网&lt;/text&gt;
+                    &lt;url&gt;www.hp.com&lt;/url&gt;
+                &lt;/link&gt; or contact HP Customer Car&lt;/li&gt;
+            &lt;/ol&gt;&lt;delay&gt;2&lt;/delay&gt;
+            Do you need other help?
+            &lt;button&gt;
+                &lt;text&gt;I met another problem&lt;/text&gt;
+                &lt;postback&gt;&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;&lt;formal&gt;get back to the start&lt;/formal&gt;&lt;/text&gt;
+                &lt;postback&gt;HI&lt;/postback&gt;
+            &lt;/button&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+&lt;/topic&gt;
+
+&lt;topic name=&quot;task&quot;&gt;
+    &lt;category&gt;
+        &lt;pattern&gt;*&lt;/pattern&gt;
+        &lt;template&gt;
+            Got it! Your printer&#39;s number is &lt;star/&gt;. &lt;split/&gt;&lt;delay&gt;1&lt;/delay&gt;
+            You can input what you want to do or click the options below.
+            &lt;button&gt;
+                &lt;text&gt;Getting Ready to Print&lt;/text&gt;
+                &lt;postback&gt;getready&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;How do I save print settings as a new shortcut or as the defaults for future print jobs?&lt;/text&gt;
+                &lt;postback&gt;Q1&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;How do I print documents from my phone or tablet?&lt;/text&gt;
+                &lt;postback&gt;Q4&lt;/postback&gt;
+            &lt;/button&gt;
+            
+            &lt;button&gt;
+                &lt;text&gt;Maintaining and transporting the printer&lt;/text&gt;
+                &lt;postback&gt;mandt&lt;/postback&gt;
+            &lt;/button&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;Q1&lt;/pattern&gt;
+        &lt;template&gt;
+            Create a new custom shortcut in the Document Properties or set print job defaults in the HP driver.&lt;split/&gt;
+            To create a custom shortcut (if the Printing Shortcut tab is available), click one of the print job shortcuts, change any of the settings, click User Specified Print Settings, then click Save as.&lt;split/&gt;
+            To set default settings for all print jobs, continue with these steps.&lt;split/&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Search Windows for &#39;printers&#39;, then click Devices and Printers in the search results.&lt;/li&gt;
+                &lt;li&gt;Right-click the icon for your printer, then click Printer Properties&lt;/li&gt;
+                &lt;li&gt;Click the Advanced tab, then click Printing Defaults.&lt;/li&gt;
+                &lt;li&gt;Change any settings you want as defaults, then click OK.&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;Q4&lt;/pattern&gt;
+        &lt;template&gt;Most HP printers connected to your local wireless network support printing from a mobile device that is connected to the same network. Go to one of the following documents for steps and requirements to print with HP apps or built-in print features.&lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;getready&lt;/pattern&gt;
+        &lt;template&gt;
+            Before you can begin printing, there are some easy procedures you need to become familiar with:&lt;break/&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Loading paper&lt;/li&gt;
+                &lt;li&gt;Inserting print cartridges&lt;/li&gt;
+                &lt;li&gt;Connecting the camera&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+    
+    &lt;category&gt;
+        &lt;pattern&gt;mandt&lt;/pattern&gt;
+        &lt;template&gt;
+            The HP Photosmart 420 series GoGo Photo Studio requires very little maintenance. Follow the guidelines in this chapter to extend the life span of the printer and printing supplies, and to ensure that your prints are always of the highest quality.&lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+            Do you need other help?
+            &lt;button&gt;
+                &lt;text&gt;I met another problem&lt;/text&gt;
+                &lt;postback&gt;&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;&lt;formal&gt;get back to the start&lt;/formal&gt;&lt;/text&gt;
+                &lt;postback&gt;HI&lt;/postback&gt;
+            &lt;/button&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+&lt;/topic&gt;
+    
+&lt;topic name=&quot;knowmore&quot;&gt;
+    &lt;category&gt;
+        &lt;pattern&gt;*&lt;/pattern&gt;
+        &lt;template&gt;
+            Got it. Your printer&#39;s number is &lt;star/&gt;.&lt;split/&gt;
+            What do you want to know about your printer?&lt;break/&gt;
+            
+            &lt;button&gt;
+                &lt;text&gt;Printing Basics&lt;/text&gt;
+                &lt;postback&gt;printingbasics&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;System Requirements&lt;/text&gt;
+                &lt;postback&gt;SR&lt;/postback&gt;
+            &lt;/button&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+        
+    &lt;category&gt;
+        &lt;pattern&gt;printingbasics&lt;/pattern&gt;
+        &lt;template&gt;
+            The HP Photosmart 420 series GoGo Photo Studio lets you produce amazing prints without even going near a computer. After setting up the printer using the setup instructions that came in the box, you are just a few steps away from printing your images. This section describes:&lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Printing from the Docked Camera&lt;/li&gt;
+                &lt;li&gt;Printing from Other Devices&lt;/li&gt;
+            &lt;/ol&gt;&lt;split/&gt;&lt;delay&gt;1&lt;/delay&gt;
+            Note In the following instructions, always use the buttons on the printer control panel, unless instructed otherwise. Also note that most camera buttons are disabled when the camera is in the camera dock. The only exception is the camera ON/OFF switch which turns off only the camera.&lt;split/&gt;&lt;delay&gt;2&lt;/delay&gt;
+            Do you need other help?
+            &lt;button&gt;
+                &lt;text&gt;&lt;formal&gt;I want to know more&lt;/formal&gt;&lt;/text&gt;
+                &lt;postback&gt;&lt;/postback&gt;
+            &lt;/button&gt;
+            &lt;button&gt;
+                &lt;text&gt;&lt;formal&gt;get back to the start&lt;/formal&gt;&lt;/text&gt;
+                &lt;postback&gt;HI&lt;/postback&gt;
+            &lt;/button&gt;
+        &lt;/template&gt;
+    &lt;/category&gt;
+&lt;/topic&gt;
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -192,7 +452,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="user_manual.html" class="btn btn-neutral float-left" title="15. AIML与用户手册（技术文档）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="user_manual.html" class="btn btn-neutral float-left" title="15. AIML与技术文档（用户手册）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
